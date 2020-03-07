@@ -1,0 +1,34 @@
+
+Image Segmentation Time:  0.06611514091491699 
+
+
+Image has been written to image/concert.jpg 
+
+
+Converting depth image:concert.jpg and camera pose to optical flow image:output/concert.jpg 
+
+(240, 320)
+
+Optical Flow Time:  3.0668299198150635 \n
+Image Segmentation Time:  0.04584956169128418 
+
+
+Image has been written to image/group.jpg 
+
+
+Converting depth image:group.jpg and camera pose to optical flow image:output/group.jpg 
+
+(240, 320)
+
+Optical Flow Time:  3.1348717212677 \n
+Image Segmentation Time:  0.0520176887512207 
+
+
+Image has been written to image/trooper.jpg 
+
+
+Converting depth image:trooper.jpg and camera pose to optical flow image:output/trooper.jpg 
+
+(240, 320)
+
+Optical Flow Time:  3.0792553424835205 

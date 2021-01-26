@@ -1,10 +1,22 @@
 # Image segmentation and Optical Flow
 
+The scenario has three images: 
+
+![./misc/images-inline.png](./misc/images-inline.png)
+
+**The below code executes the Region Growing Algorithm, and then the Optical Flow Estimation then finally the three images are combined in a new script `deterministic_stochastic.py` by interpolation.**
+
 ```bash
 
 cd scripts/
 
-python execute.py --image concert.jpg && python calculate_optical_flow.py --image concert.jpg && python execute.py --image group.jpg && python calculate_optical_flow.py --image group.jpg && python execute.py --image trooper.jpg && python calculate_optical_flow.py --image trooper.jpg && python deterministic_stochastic.py --det_coeff 0.6 --stoc_coeff 0.4
+python execute.py --image concert.jpg && \
+python calculate_optical_flow.py --image concert.jpg && \
+python execute.py --image group.jpg && \
+python calculate_optical_flow.py --image group.jpg && \
+python execute.py --image trooper.jpg && \
+python calculate_optical_flow.py --image trooper.jpg && \
+python deterministic_stochastic.py --det_coeff 0.6 --stoc_coeff 0.4
 
 ```
 
@@ -15,33 +27,29 @@ Image Segmentation
 
 **Segmentation of Image using Region Growing (Erosion/Dilation), and using OpenCV.**
 
-![./images/concert.jpg](./images/concert.jpg)
+**Region Growing is done using OpenCV which finally produces the markers that are tagged with color map presented in the code.**
 
-![./images/group.jpg](./images/group.jpg)
-
-![./images/trooper.jpg](./images/trooper.jpg)
+![./images/images-inline.png](./images/images-inline.png)
 
 Optical Flow
 ------------
 
-**Calculating Optical Flow Derivatives of the Images given**
+**Calculating Optical Flow Derivatives of the Images given.**
 
-![./output/concert.jpg](./output/concert.jpg)
+**Optical Flow Estimation is done using SceneNet Deep Learning Model. Here is a another repository where a complex image has been derived from Optical Flow Derivatives to be represented as Amplitude of the image.**
 
-![./output/group.jpg](./output/group.jpg)
+[https://github.com/aswinvk28/optical-flow-analysis](https://github.com/aswinvk28/optical-flow-analysis)
 
-![./output/trooper.jpg](./output/trooper.jpg)
+![./output/images-inline.png](./output/images-inline.png)
 
 Final Image after Interpolation
 -------------------------------
 
 **Final Interpolated Image from Optical Flow Model and Image Segmentation Model in OpenCV**
 
-![./net/concert.jpg](./net/concert.jpg)
+**A combination of Region Growing in OpenCV and Optical Flow will provide the resulting image which is an interpolated image**
 
-![./net/group.jpg](./net/group.jpg)
-
-![./net/trooper.jpg](./net/trooper.jpg)
+![./net/images-inline.png](./net/images-inline.png)
 
 Original Images
 ---------------

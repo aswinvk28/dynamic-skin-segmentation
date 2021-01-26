@@ -6,8 +6,8 @@ class ImageSegmentation():
     @staticmethod
     def region_growing(thresh, dilationKernel, closingKernel):
         opening = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, dilationKernel, 7)
-        closing = cv2.morphologyEx(opening, cv2.MORPH_CLOSE, closingKernel)
-        dilation = cv2.dilate(thresh, dilationKernel, 3)
+        closing = cv2.morphologyEx(thresh, cv2.MORPH_CLOSE, closingKernel)
+        dilation = cv2.dilate(opening, dilationKernel, 3)
         
         return dilation, closing, opening
 
